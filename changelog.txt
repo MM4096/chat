@@ -1,0 +1,3 @@
+So you have chosen to look at the changelog
+
+V1.0 - Release: Added main chat thingy-mc-bob
