@@ -8,12 +8,12 @@ const firebaseConfig = {
     appId: "1:867698747892:web:922cb4fc1c0d0cfdd5f1a1"
 };
 $(document).ready(function () {
-    if (localStorage.getItem("username") === null) {
+    if (localStorage.getItem("chatUsername") === null) {
         var username = prompt("Enter a username");
-        localStorage.setItem("username", username)
+        localStorage.setItem("chatUsername", username)
     } else {
-        var username = localStorage.getItem("username");
-        window.alert("Your username is " + username);
+        var username = localStorage.getItem("chatUsername");
+        alert("Your username is " + username);
     }
 })
 firebase.initializeApp(firebaseConfig);
