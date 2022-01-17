@@ -1,6 +1,8 @@
 ﻿ul {
     list-style-type: none;
+    text-indent: 0px;
 }
 a {
     text-decoration: none;
 }
+
