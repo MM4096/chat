@@ -7,9 +7,17 @@ const firebaseConfig = {
     messagingSenderId: "867698747892",
     appId: "1:867698747892:web:922cb4fc1c0d0cfdd5f1a1"
 };
+$(document).ready(function () {
+    if (localStorage.getItem("username") === null) {
+        var username = prompt("Enter a username");
+        localStorage.setItem("username", username)
+    } else {
+        var username = localStorage.getItem("username");
+        window.alert("Your username is " + username);
+    }
+})
 firebase.initializeApp(firebaseConfig);
 const db = firebase.database();
-const username = prompt("What's your name?");
 document.getElementById("send-message").addEventListener("submit", postChat);
 function postChat(e) {
     e.preventDefault();
