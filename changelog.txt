@@ -4,3 +4,5 @@ V1.0 - Release: Added main chat thingy-mc-bob
 
 V1.1 - Added username recorder. To reset, click into the lock icon on the left of the url bar. Click into the mm4096.github folder,
 and open local storage. Click remove. Refresh.
+
+V1.2 - Added style and message of the day. Message box now fixed height, with scrollable. Also added msg of the day

@@ -13,3 +13,17 @@ button {
     background-color: white;
     border: 2px solid black;
 }
+#messageBox {
+    width: auto;
+    height: 490px; /*Makes the top message partially shown*/
+    overflow: auto;
+    display: flex;
+    flex-direction: column-reverse;
+}
+::-webkit-scrollbar {
+    width: 0; /* Remove scrollbar space */
+    background: transparent; /* Optional: just make scrollbar invisible */
+}
+label {
+    color: #11ff11;
+}
