@@ -1,3 +1,6 @@
 So you have chosen to look at the changelog
 
 V1.0 - Release: Added main chat thingy-mc-bob
+
+V1.1 - Added username recorder. To reset, click into the lock icon on the left of the url bar. Click into the mm4096.github folder,
+and open local storage. Click remove. Refresh.
