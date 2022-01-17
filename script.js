@@ -22,12 +22,20 @@ function postChat(e) {
     e.preventDefault();
     const timestamp = Date.now();
     const chatTxt = document.getElementById("chat-txt");
-    const message = chatTxt.value;
-    chatTxt.value = "";
-    db.ref("messages/" + timestamp).set({
-        usr: username,
-        msg: message,
-    });
+    if (chatTxt != "" && chatTxt!= " ") {
+        const message = chatTxt.value;
+        chatTxt.value = "";
+        db.ref("messages/" + timestamp).set({
+            usr: username,
+            msg: message,
+        });
+        $("#chat-btn").prop('disabled', true);
+    } else {
+        window.alert("Error. See console for more info");
+        console.error("Error. Expected string, got '' instead")
+    }
+    
+    setTimeout(function () { $("#chat-btn").prop("disabled", false); }, 3000);
 }
 const fetchChat = db.ref("messages/");
 fetchChat.on("child_added", function (snapshot) {
