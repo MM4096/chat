@@ -15,6 +15,12 @@ if (localStorage.getItem("chatUsername") === null) {
     var username = localStorage.getItem("chatUsername");
     alert("Your username is " + username);
 }
+//if (username != "wu") {
+//    window.alert("System Currently Shutdown. Please try again later");
+//    window.location.href = "https://www.google.com/";
+//}
+
+//add comments infront of above statement to enable/disable access
 firebase.initializeApp(firebaseConfig);
 const db = firebase.database();
 document.getElementById("send-message").addEventListener("submit", postChat);
