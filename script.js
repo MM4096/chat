@@ -8,19 +8,21 @@ const firebaseConfig = {
     appId: "1:867698747892:web:922cb4fc1c0d0cfdd5f1a1"
 };
 
-if (localStorage.getItem("chatUsername") === null) {
+if (localStorage.getItem("chatUsername") === null || localStorage.getItem("chatUsername") === undefined) {
     var username = prompt("Enter a username");
     localStorage.setItem("chatUsername", username)
 } else {
     var username = localStorage.getItem("chatUsername");
     alert("Your username is " + username);
 }
-if (username != "wu" || username != "bot") {
+
+//add comments infront of above statement to enable/disable access
+if (username != "wu" && username != "bot") {
     window.alert("System Currently Shutdown. Please try again later");
     window.location.href = "https://www.google.com/";
 }
 
-//add comments infront of above statement to enable/disable access
+
 firebase.initializeApp(firebaseConfig);
 const db = firebase.database();
 document.getElementById("send-message").addEventListener("submit", postChat);
