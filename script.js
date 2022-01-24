@@ -19,7 +19,7 @@ if (localStorage.getItem("chatUsername") === null || localStorage.getItem("chatU
 //add comments infront of above statement to enable/disable access
 //if (username != "wu" && username != "bot") {
 //    window.alert("System Currently Shutdown. Please try again later");
-//    window.location.href = "https://www.google.com/";
+//    window.close();
 //}
 
 
@@ -32,7 +32,7 @@ function postChat(e) {
     let chatTxt = document.getElementById("chat-txt");
     const message = chatTxt.value;
     if (message != "" && message != " " && message != null) {
-        if (message.includes("alias")) {
+        if (message.includes("alias", 0)) {
             let command = message.split(" ");
             console.log(command);
             if (command.length != 3) {
@@ -41,8 +41,10 @@ function postChat(e) {
             } else {
                 localStorage.setItem(command[1], command[2]);
                 console.log(localStorage.getItem(command[1]));
+                $("ul li").last().after("<li></li>");
+                $("ul li").last().text("Auto-generated: alias set for user: " + command[1] + ", given value: " + command[2]) + ". (Private feedback)";
             }
-            $("#chat-txt").val("")
+            $("#chat-txt").val("");
         } else {
             
             chatTxt.value = "";
@@ -65,12 +67,13 @@ const fetchChat = db.ref("messages/");
 fetchChat.on("child_added", function (snapshot) {
     const messages = snapshot.val();
     if (localStorage.getItem(messages.usr) == null) {
-        const msg = "<li>" + messages.usr + " : " + messages.msg + "</li>";
-        document.getElementById("messages").innerHTML += msg;
+        $("ul li").last().after("<li></li>");
+        $("ul li").last().text(messages.usr + " : " + messages.msg);
     } else {
         let aliasName = localStorage.getItem(messages.usr);
-        const msg = "<li>" + aliasName + " : " + messages.msg + "</li>";
-        document.getElementById("messages").innerHTML += msg;
+        $("ul li").last().after("<li></li>");
+        $("ul li").last().text(aliasName + " : " + messages.msg);
+        
     }
     
 });

@@ -4,7 +4,7 @@
 }
 a {
     text-decoration: none;
-    color: #0000ff;
+    color: #0000ff !important;
 }
 input {
     border: 2px solid black;
@@ -25,5 +25,15 @@ button {
     background: transparent; /* Optional: just make scrollbar invisible */
 }
 label {
-    color: #11ff11;
+    color: #11ff11 !important;
+}
+.light {
+    background-color: white;
+    color: black;
+    border-color: black;
+}
+.dark {
+    background-color: black;
+    color: white;
+    border-color: white;
 }
