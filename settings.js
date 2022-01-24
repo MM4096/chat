@@ -4,12 +4,16 @@ $(document).ready(function () {
     }
 })
 
-function toggleMode() {
-    if ($("*").hasClass("dark")) {
-        $("*").removeClass("dark").addClass("light");
-        localStorage.setItem("color", "light");
+function toggleMode(mode) {
+    if (mode == "hacker") {
+        $("*").removeClass("light").addClass("dark").addClass("hacker");
     } else {
-        $("*").removeClass("light").addClass("dark");
-        localStorage.setItem("color", "dark");
+        if ($("*").hasClass("dark")) {
+            $("*").removeClass("dark").addClass("light");
+            localStorage.setItem("color", "light");
+        } else {
+            $("*").removeClass("light").addClass("dark");
+            localStorage.setItem("color", "dark");
+        }
     }
 }

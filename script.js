@@ -36,15 +36,38 @@ function postChat(e) {
             let command = message.split(" ");
             console.log(command);
             if (command.length != 3) {
-                window.alert("Error. See console for more info");
-                console.error("Error. Expected 2 arguments.")
+                if (command.length == 1) {
+                    $("ul li").last().after("<li class='list'>alias command list:<br>alias [username] [alias]<br>[username]: current username, [alias]: new name you want to give them(Private feedback)" + "</li>");
+                } else {
+                    window.alert("Error. See console for more info");
+                    console.error("Error. Expected 2 arguments.");
+                }
             } else {
                 localStorage.setItem(command[1], command[2]);
                 console.log(localStorage.getItem(command[1]));
-                $("ul li").last().after("<li></li>");
+                $("ul li").last().after("<li class='list'></li>");
                 $("ul li").last().text("Auto-generated: alias set for user: " + command[1] + ", given value: " + command[2]) + ". (Private feedback)";
             }
             $("#chat-txt").val("");
+        } else if (message.includes("settings", 0)) {
+            let command = message.split(" ");
+            if (command.length == 1) {
+                $("ul li").last().after("<li class='list'>Settings command list:<br>settings colour [color]<br>[color]: [dark], [light]<br>(Private feedback)" + "</li>");
+            }
+            if (command[1] == "color" || command[1] == "colour") {
+                 if (command.length == 2 && (command[1] == "color" || command[1] == "colour")) {
+                    toggleMode();
+                    $("ul li").last().after("<li class='list'>Color mode toggled! (Private feedback)" + "</li>");
+                } else if (command.length == 3 && (command[1] == "color" || command[1] == "colour") && command[2] == "hacker") {
+                    toggleMode("hacker");
+                    $("ul li").last().after("<li class='list'>Hacker mode activated! (Private feedback)" + "</li>");
+                } else {
+                    window.alert("Error. See console for more info");
+                    console.error("Error. Expected 1, 2 or 3 auguments")
+                }
+                $("#chat-txt").val("");
+            }
+            
         } else {
             
             chatTxt.value = "";

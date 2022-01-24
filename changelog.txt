@@ -13,3 +13,8 @@ V1.4 - Here's a list of changes:
 	.1: Changed the recieve message function to prevent adding HTML tags
 	.2: Added dark mode
 	.3: Added meta tags
+	.4: Added more commands. Type in the type of command to see all auguments.
+	Added the following:
+		settings
+		alias
+	Secret mode added!

@@ -27,6 +27,9 @@ button {
 label {
     color: #11ff11 !important;
 }
+.list {
+    color: #0000ff !important;
+}
 .light {
     background-color: white;
     color: black;
@@ -36,4 +39,7 @@ label {
     background-color: black;
     color: white;
     border-color: white;
+}
+.hacker {
+    color: #00ff00;
 }
