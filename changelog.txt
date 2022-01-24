@@ -12,3 +12,4 @@ Note that this is permanent so far :(, so be careful!
 V1.4 - Here's a list of changes:
 	.1: Changed the recieve message function to prevent adding HTML tags
 	.2: Added dark mode
+	.3: Added meta tags
