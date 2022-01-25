@@ -58,7 +58,7 @@ function postChat(e) {
                  if (command.length == 2 && (command[1] == "color" || command[1] == "colour")) {
                     toggleMode();
                     $("ul li").last().after("<li class='list'>Color mode toggled! (Private feedback)" + "</li>");
-                } else if (command.length == 3 && (command[1] == "color" || command[1] == "colour") && command[2] == "hacker") {
+                } else if (command.length == 3 && (command[1] == "color" || command[1] == "colour") && command[2] == "hecker") {
                     toggleMode("hacker");
                     $("ul li").last().after("<li class='list'>Hacker mode activated! (Private feedback)" + "</li>");
                 } else {
