@@ -67,6 +67,10 @@ function postChat(e) {
                 }
                 $("#chat-txt").val("");
             }
+            if (command[1] == "notification") {
+                toggleNotification();
+                $("ul li").last().after("<li class='list'>Notification status toggled! (Private feedback)" + "</li>");
+            }
             
         } else {
             
@@ -92,11 +96,16 @@ fetchChat.on("child_added", function (snapshot) {
     if (localStorage.getItem(messages.usr) == null) {
         $("ul li").last().after("<li></li>");
         $("ul li").last().text(messages.usr + " : " + messages.msg);
+        if (messages.usr !== username) {
+            notification("New Message: " + messages.usr + " has said: " + messages.msg);
+        }
     } else {
         let aliasName = localStorage.getItem(messages.usr);
         $("ul li").last().after("<li></li>");
         $("ul li").last().text(aliasName + " : " + messages.msg);
-        
+        if (messages.usr !== username) {
+            notification("New Message: " + aliasName + " has said: " + messages.msg);
+        }
     }
     
 });

@@ -1,8 +1,14 @@
+var notificationOn;
 $(document).ready(function () {
     if (localStorage.getItem("color") == "dark") {
         $("*").addClass("dark");
-        notification("hi");
     }
+    if (localStorage.getItem("notification") == "1") {
+        notificationOn = 1;
+    } else {
+        notificationOn = 0;
+    }
+    notification("Notification: Active!");
 })
 
 function toggleMode(mode) {
@@ -19,9 +25,7 @@ function toggleMode(mode) {
     }
 }
 function notification(msg) {
-    if (!("Notification" in window)) {
-        alert("This browser does not support desktop notification");
-    } else if (Notification.permission === "granted") {
+    if (Notification.permission === "granted" && notificationOn == 1) {
         var notification = new Notification(msg);
     }   else if (Notification.permission !== "denied") {
         Notification.requestPermission().then(function (permission) {
@@ -32,4 +36,13 @@ function notification(msg) {
         });
     }
 
+}
+function toggleNotification() {
+    if (localStorage.getItem("notification") == "1") {
+        localStorage.setItem("notification", "0");
+        notificationOn = 0;
+    } else {
+        localStorage.setItem("notification", "1");
+        notificationOn = 1;
+    }
 }
