@@ -70,7 +70,9 @@ function postChat(e) {
             if (command[1] == "notification") {
                 toggleNotification();
                 $("ul li").last().after("<li class='list'>Notification status toggled! (Private feedback)" + "</li>");
+                $("#chat-txt").val("");
             }
+            command = [];
             
         } else {
             
@@ -109,6 +111,5 @@ fetchChat.on("child_added", function (snapshot) {
             notification("New Message: " + aliasName + " has said: " + messages.msg);
         }
     }
-    console.log(messages)
     
 });

@@ -40,11 +40,11 @@ function notification(msg) {
 }
 function toggleNotification() {
     if (localStorage.getItem("notification") == "1") {
-        console.log(localStorage.getItem("notification"));
         localStorage.setItem("notification", "0");
         notificationOn = 0;
     } else {
         localStorage.setItem("notification", "1");
         notificationOn = 1;
     }
+    console.log(notificationOn);
 }
