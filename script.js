@@ -69,8 +69,8 @@ function postChat(e) {
                 $("#chat-txt").val("");
             }
             if (command[1] == "notification") {
-                toggleNotification();
                 $("ul li").last().after("<li class='list'>Notification status toggled! (Private feedback)" + "</li>");
+                toggleNotification();
                 $("#chat-txt").val("");
             }
             command = [];
