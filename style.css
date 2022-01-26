@@ -27,8 +27,11 @@ button {
 label {
     color: #11ff11 !important;
 }
-.list {
+.light .list{
     color: #0000ff !important;
+}
+.dark .list {
+    color: #aaaaff !important;
 }
 .light {
     background-color: white;
