@@ -17,10 +17,10 @@ if (localStorage.getItem("chatUsername") === null || localStorage.getItem("chatU
 }
 
 //add comments infront of above statement to enable/disable access
-//if (username != "wu" && username != "bot") {
-//    window.alert("System Currently Shutdown. Please try again later");
-//    window.close();
-//}
+if (username != "wu" && username != "bot") {
+    window.alert("System Currently Shutdown. Please try again later. <br>Reason: Adding features");
+    window.close();
+}
 
 
 firebase.initializeApp(firebaseConfig);
