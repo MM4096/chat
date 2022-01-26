@@ -52,7 +52,7 @@ function postChat(e) {
         } else if (message.includes("settings", 0)) {
             let command = message.split(" ");
             if (command.length == 1) {
-                $("ul li").last().after("<li class='list'>Settings command list:<br>settings colour [color]<br>[color]: [dark], [light]<br>(Private feedback)" + "</li>");
+                $("ul li").last().after("<li class='list'>Settings command list:<br>settings colour [color]<br>[color]: [dark], [light]<br>settings notification: toggles notifications<br>(Private feedback)" + "</li>");
             }
             if (command[1] == "color" || command[1] == "colour") {
                  if (command.length == 2 && (command[1] == "color" || command[1] == "colour")) {
