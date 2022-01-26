@@ -17,10 +17,11 @@ if (localStorage.getItem("chatUsername") === null || localStorage.getItem("chatU
 }
 
 //add comments infront of above statement to enable/disable access
-if (username != "wu" && username != "bot") {
-    window.alert("System Currently Shutdown. Please try again later. <br>Reason: Adding features");
-    window.close();
-}
+//if (username != "wu" && username != "bot") {
+//    while (username != "wu" && username != "bot") {
+//        window.alert("System Currently Shutdown. Please try again later. \rReason: Adding features \rCome back later or reload soon");
+//    }
+//}
 
 
 firebase.initializeApp(firebaseConfig);
@@ -106,7 +107,7 @@ fetchChat.on("child_added", function (snapshot) {
     } else {
         let aliasName = localStorage.getItem(messages.usr);
         $("ul li").last().after("<li></li>");
-        $("ul li").last().text(aliasName + " : " + messages.msg);
+        $("ul li").last().text(aliasName + " (" + messages.usr + ") " + " : " + messages.msg);
         if (messages.usr !== username && sessionStorage.getItem("notificationOn") == "1") {
             notification("New Message: " + aliasName + " has said: " + messages.msg);
         }

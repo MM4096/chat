@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Online Chat">
     <meta name="keywords" content="chat, online, one server">
-    <title>Chat - V1.4.4.1</title>
+    <title>Chat - V1.5.2</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
     <div id="chat">
+        <h3>We're at V1.5! Check out the new <a href="commands.txt" target="_blank">commands page here!</a></h3>
         <div id="messageBox">
             <ul id="messages">
                 <li></li>   <!--Blank li or jquery will meet error-->
@@ -19,16 +20,18 @@
         </div>
 
         <form id="send-message">
-            <label for="chat-txt">Message of the day: Dark Mode</label>
+            <label for="chat-txt">Message of the day: How about some <a href="commands.txt" target="_blank">commands</a>?</label>
             <br />
             <input id="chat-txt" type="text" autocomplete="off"/>
             <button id="chat-btn" type="submit">Submit</button>
         </form>
     </div>
     <br />
-    <button onclick="toggleMode()">Turn on/off dark mode! (EXPERIMENTAL)</button>
+    <button onclick="toggleNotification()">Turn on/off notifications! (EXPERIMENTAL)</button>
     <br />
     <a href="changelog.txt" target="_blank">Read the very boring changelog here!</a>
+    <br />
+    <a href="commands.txt" target="_blank">Read about da commands here :)</a>
 
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>

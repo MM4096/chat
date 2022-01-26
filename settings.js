@@ -42,9 +42,11 @@ function toggleNotification() {
     if (localStorage.getItem("notification") == "1") {
         localStorage.setItem("notification", "0");
         notificationOn = 0;
+        $("ul li").last().text("Notification status turned off! (Private feedback)");
     } else {
         localStorage.setItem("notification", "1");
         notificationOn = 1;
+        $("ul li").last().text("Notification status turned on! (Private feedback)");
     }
     console.log(notificationOn);
 }

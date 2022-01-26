@@ -19,3 +19,7 @@ V1.4 - Here's a list of changes:
 		alias
 	Secret mode added!
 	.4.1: Changed color of command output when dark mode is active
+
+V1.5 - Yay :)
+	.1: Added notifications and settings for it
+	.2: Added the new commands.txt

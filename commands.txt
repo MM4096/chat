@@ -1,0 +1,10 @@
+COMMANDS:
+Settings Commands:
+	settings: shows the list of setting commands
+	settings color: toggles the light/dark mode
+	settings color [mode]: If the [mode] is a certain value, turns on something...
+	settings notification: (EXPERIMENTAL) Toggles wether you recieve notifications or not
+
+Alias Commands:
+	alias: shows the alias command usage
+	alias [currentUsername] [aliasUsername]: Gives the [currentUsername] a new name of [aliasUsername] (Your side only). Message style: [alias username] ([currentUsername]) : message
