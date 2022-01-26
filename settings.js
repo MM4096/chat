@@ -8,6 +8,7 @@ $(document).ready(function () {
     } else {
         notificationOn = 0;
     }
+    sessionStorage.setItem("notificationOn", "0");
     notification("Notification: Active!");
 })
 
