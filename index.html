@@ -5,24 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Online Chat">
     <meta name="keywords" content="chat, online, one server">
-    <title>Chat - V1.5.2</title>
+    <title>Chat - V1.5.3</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+    <h3 id="header">Check out the new <a href="commands.txt" target="_blank">commands page here!</a></h3>
     <div id="chat">
-        <h3>We're at V1.5! Check out the new <a href="commands.txt" target="_blank">commands page here!</a></h3>
         <div id="messageBox">
             <ul id="messages">
-                <li></li>   <!--Blank li or jquery will meet error-->
+                <li>Loading... If this takes too long, try connecting to wifi</li>   <!--Blank li or jquery will meet error-->
             </ul>
         </div>
 
         <form id="send-message">
-            <label for="chat-txt">Message of the day: How about some <a href="commands.txt" target="_blank">commands</a>?</label>
+            <label for="chat-txt">Message of the day: Gimme a name for this chat plz</label>
             <br />
-            <input id="chat-txt" type="text" autocomplete="off"/>
+            <input id="chat-txt" type="text" autocomplete="off" />
             <button id="chat-btn" type="submit">Submit</button>
         </form>
     </div>

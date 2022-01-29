@@ -23,3 +23,4 @@ V1.4 - Here's a list of changes:
 V1.5 - Yay :)
 	.1: Added notifications and settings for it
 	.2: Added the new commands.txt
+	.3: Changed the style a bit, the first <li> has a value that can change.

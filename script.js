@@ -10,10 +10,17 @@ const firebaseConfig = {
 
 if (localStorage.getItem("chatUsername") === null || localStorage.getItem("chatUsername") === undefined) {
     var username = prompt("Enter a username");
-    localStorage.setItem("chatUsername", username)
+    localStorage.setItem("chatUsername", username);
 } else {
     var username = localStorage.getItem("chatUsername");
-    alert("Your username is " + username);
+    const testUserArrr = username.split(" ");
+    if (testUserArrr.length !== 1) {
+        var username = promt("Sorry, due to recent changes, we require no spaces in your username. Please enter another one");
+        localStorage.setItem("chatUsername", username);
+    } else {
+        alert("Your username is " + username + "\rV1.5.3");
+    }
+    
 }
 
 //add comments infront of above statement to enable/disable access
@@ -24,8 +31,10 @@ if (localStorage.getItem("chatUsername") === null || localStorage.getItem("chatU
 //}
 
 
-firebase.initializeApp(firebaseConfig);
-const db = firebase.database();
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.database();
+
+
 document.getElementById("send-message").addEventListener("submit", postChat);
 function postChat(e) {
     e.preventDefault();
@@ -61,7 +70,7 @@ function postChat(e) {
                     $("ul li").last().after("<li class='list'>Color mode toggled! (Private feedback)" + "</li>");
                 } else if (command.length == 3 && (command[1] == "color" || command[1] == "colour") && command[2] == "hecker") {
                     toggleMode("hacker");
-                    $("ul li").last().after("<li class='list'>Hacker mode activated! (Private feedback)" + "</li>");
+                    $("ul li").last().after("<li class='list'>Hecker mode activated! (Private feedback)" + "</li>");
                 } else {
                     window.alert("Error. See console for more info");
                     console.error("Error. Expected 1, 2 or 3 auguments")
@@ -112,5 +121,5 @@ fetchChat.on("child_added", function (snapshot) {
             notification("New Message: " + aliasName + " has said: " + messages.msg);
         }
     }
-    
+    $("ul li").first().text("Beginning of message history")
 });

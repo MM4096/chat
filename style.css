@@ -8,6 +8,8 @@ a {
 }
 input {
     border: 2px solid black;
+    width: fit-content;
+    block-size: fit-content;
 }
 button {
     background-color: white;
@@ -15,7 +17,7 @@ button {
 }
 #messageBox {
     width: auto;
-    height: 490px; /*Makes the top message partially shown*/
+    height: 500px; /*Makes the top message partially shown*/
     overflow: auto;
     display: flex;
     flex-direction: column-reverse;
@@ -45,4 +47,7 @@ label {
 }
 .hacker {
     color: #00ff00;
+}
+#header {
+    margin: 0px;
 }
